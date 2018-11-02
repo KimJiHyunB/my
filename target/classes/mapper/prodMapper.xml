@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.spring.exam2.dao.ProductMapper">
+
+
+<!-- 상품저장 -->
+<insert id="insertProd" parameterType="prod">
+	insert into 
+		product (
+			prod_type
+			,prod_name
+			,prod_price
+			,prod_inv
+			,prod_exp
+			,prod_img
+			,prod_saveimg
+		)
+		values (
+			#{prod_type}
+			,#{prod_name}
+			,#{prod_price}
+			,#{prod_inv}
+			,#{prod_exp}
+			,#{prod_img}
+			,#{prod_saveimg}	
+		)
+</insert>
+
+<!-- 전체 글 개수 (검색 필터링 후) -->
+<select id="getTotal" parameterType="string" resultType="int">
+	select 
+		count(*)
+	from 
+		product
+	where
+		prod_type like CONCAT('%',#{typeText},'%')
+</select>
+	
+<!-- 현재 페이지 목록 (검색 필터링 후) -->
+<select id="listBoard" parameterType="string" resultType="prod">
+	select 
+		prod_id
+		,prod_type
+		,prod_name
+		,prod_price
+		,prod_img
+		,prod_saveimg
+	from 
+		product
+	where
+		prod_type like CONCAT('%',#{typeText},'%')
+	order by prod_id desc
+</select>
+
+<!-- 게시글 읽기 -->
+<select id="getProd" parameterType="int" resultType="Prod">
+	select 
+		prod_id
+		,prod_type
+		,prod_name
+		,prod_price
+		,prod_exp
+		,prod_img
+		,prod_saveimg
+	from 
+		product
+	where 
+		prod_id = #{prod_id}
+	</select>
+		
+</mapper>
