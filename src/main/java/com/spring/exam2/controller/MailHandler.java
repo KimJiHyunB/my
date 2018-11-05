@@ -8,6 +8,10 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
+/**
+ * 会員加入のための電子メール認証メールハンドラー
+ * 
+ */
 public class MailHandler {
 
 	private JavaMailSender mailSender;
@@ -20,11 +24,12 @@ public class MailHandler {
         messageHelper = new MimeMessageHelper(message, true, "UTF-8");
     }
 
+    // メール·タイトル
     public void setSubject(String subject) throws MessagingException {
         messageHelper.setSubject(subject);
     }
     
-
+    // メール内容
     public void setText(String htmlContent) throws MessagingException {
         messageHelper.setText(htmlContent, true);
     }

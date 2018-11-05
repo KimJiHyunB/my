@@ -1,4 +1,15 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/spring/exam2/controller/CartController.java=UTF-8
+encoding//src/main/java/com/spring/exam2/controller/MailHandler.java=UTF-8
+encoding//src/main/java/com/spring/exam2/controller/ProductController.java=UTF-8
+encoding//src/main/java/com/spring/exam2/controller/TempKey.java=UTF-8
+encoding//src/main/java/com/spring/exam2/controller/UserController.java=UTF-8
+encoding//src/main/java/com/spring/exam2/dao/CartDAO.java=UTF-8
+encoding//src/main/java/com/spring/exam2/dao/CartMapper.java=UTF-8
+encoding//src/main/java/com/spring/exam2/dao/ProductDAO.java=UTF-8
+encoding//src/main/java/com/spring/exam2/dao/ProductMapper.java=UTF-8
+encoding//src/main/java/com/spring/exam2/dao/UserDAO.java=UTF-8
+encoding//src/main/java/com/spring/exam2/dao/UserMapper.java=UTF-8
 encoding//src/main/java/com/spring/exam2/interceptor/LoginInterceptor.java=UTF-8
 encoding//src/main/java/com/spring/exam2/util/FileService.java=UTF-8
 encoding//src/main/java/com/spring/exam2/util/PageNavigator.java=UTF-8

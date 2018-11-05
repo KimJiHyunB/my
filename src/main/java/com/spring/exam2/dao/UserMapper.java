@@ -4,16 +4,18 @@ import com.spring.exam2.vo.User;
 
 public interface UserMapper {
 	
+	// ä¼šå“¡åŠ å…¥
 	public int insertUser(User user);
 	
-	//ID·Î ÇØ´ç È¸¿ø Á¤º¸ °Ë»ö
+	// IDã§è©²å½“ä¼šå“¡æƒ…å ±æ¤œç´¢
 	public User getUser(String user_id);
 	
-	// Á¤º¸ ¼öÁ¤
+	// ä¼šå“¡æƒ…å ±ä¿®æ­£å‡¦ç†
 	public int updateUser(User user);
 	
+	// è©²å½“ã®emailã«èªè¨¼ã‚­ãƒ¼ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
 	public int createAuthKey(User user);
 	
-	// ¸ŞÀÏ ÀÎÁõ½Ã È°¼ºÈ­
+	// ãƒ¡ãƒ¼ãƒ«èªè¨¼æ™‚æ´»æ€§åŒ–
 	public int userAuth(String user_id);
 }

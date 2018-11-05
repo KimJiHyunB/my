@@ -9,16 +9,16 @@ import com.spring.exam2.vo.Product;
 
 public interface ProductMapper {
 	
-	// »óÇ° µî·Ï
+	// å•†å“æƒ…å ±ä¿å­˜
 	public int insertProd(Product prod);
 	
-	// ÃÑ ±Û °³¼ö
+	// æ¤œç´¢çµæœãƒ¬ã‚³ãƒ¼ãƒ‰æ•°
 	public int getTotal(String typeText);
 	
-	//°Ë»ö ÈÄÀÇ ÇöÀç ÆäÀÌÁö ¸ñ·Ï
+	// 1ãƒšãƒ¼ã‚¸ã®æ›¸ãè¾¼ã¿ãƒªã‚¹ãƒˆã‚’èª­ã‚€ã“ã¨
 	public ArrayList<Product> listBoard(String typeText,RowBounds rb);
 	
-	// »óÇ° 1°³ ÀĞ±â
+	// æ²ç¤ºæ–‡ä¸€èª­
 	public Product getProd(int prod_id);
 
 }

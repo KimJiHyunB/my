@@ -7,23 +7,22 @@ import com.spring.exam2.vo.Cart;
 
 public interface CartMapper {
 	
-	// 1. Àå¹Ù±¸´Ï ¸¸µé±â
+	// è²·ç‰©ç± 
 	public int insertCart(Cart cart); 
 	
-	// 2. Àå¹Ù±¸´Ï ¸ñ·Ï
+	// è²·ã„ç‰©ã‹ã”ã®ä¸€è¦§
 	public List<HashMap<String, Object>> listCart(String user_id);
 	
-	// 5. Àå¹Ù±¸´Ï ±İ¾× ÇÕ°è
-
+	// è²·ã„ç‰©ã‹ã”ã®é‡‘é¡åˆè¨ˆ
     public int sumMoney(String user_id); 
 	
-	// 6. Àå¹Ù±¸´Ï µ¿ÀÏÇÑ »óÇ° ·¹ÄÚµå È®ÀÎ
+	// è²·ã„ç‰©ã‹ã”ã®åŒä¸€ã®å•†å“ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’ç¢ºèª
 	public int countCart(Cart cart);
 	
-	// 7. Àå¹Ù±¸´Ï¿¡ µ¿ÀÏÇÑ »óÇ°ÀÌ Á¸ÀçÇÏ¸é ¼öÁ¤ 
+	// è²·ã„ç‰©ã‹ã”ã«åŒä¸€ã®å•†å“ãŒå­˜åœ¨ã™ã‚Œã°,ä¿®æ­£ 
 	public int updateCart(Cart cart);
 	
-	// 3. Àå¹Ù±¸´Ï »èÁ¦
+	// è²·ã„ç‰©ã‹ã”ã®å‰Šé™¤
     public int deleteCart(int cart_id);
 	
 

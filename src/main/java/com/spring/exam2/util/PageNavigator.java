@@ -1,6 +1,8 @@
 package com.spring.exam2.util;
 
-
+/**
+* 掲示板ページング処理クラス
+*/
 public class PageNavigator {
 
 	private int countPerPage;		
@@ -38,7 +40,7 @@ public class PageNavigator {
 		startRecord = (currentPage - 1) * countPerPage;			
 	}
 
-
+	
 	public int getCountPerPage() {
 		return countPerPage;
 	}

@@ -17,8 +17,8 @@ public class ProductDAO {
 	SqlSession sqlsession;
 	
 	/**
-	* ÀúÀå
-	* @param prod ÀúÀåÇÒ °Ô½Ã±Û Á¤º¸
+	* å•†å“æƒ…å ±ä¿å­˜
+	* @param prod ä¿å­˜ã™ã‚‹æ›¸ãè¾¼ã¿æƒ…å ±
 	*/
 	public int insertProd(Product prod) {
 		ProductMapper mapper = sqlsession.getMapper(ProductMapper.class);
@@ -34,8 +34,8 @@ public class ProductDAO {
 	}
 	
 	/**
-	 * °Ë»ö °á°ú ·¹ÄÚµå ¼ö
-	 * @return ±Û°³¼ö
+	 * æ¤œç´¢çµæœãƒ¬ã‚³ãƒ¼ãƒ‰æ•°
+	 * @return å…¨æ²ç¤ºç‰©ã®æœ¬æ•°
 	 */
 	public int getTotal(String typeText) {
 		ProductMapper mapper = sqlsession.getMapper(ProductMapper.class);
@@ -44,7 +44,7 @@ public class ProductDAO {
 	}
 	
 	/**
-	 * ÇÑ ÆäÀÌÁöÀÇ °Ô½Ã±Û ¸ñ·Ï ÀĞ±â
+	 * 1ãƒšãƒ¼ã‚¸ã®æ›¸ãè¾¼ã¿ãƒªã‚¹ãƒˆã‚’èª­ã‚€ã“ã¨
 	 */
 	public ArrayList<Product> listBoard(String typeText, int startRecord, int countPerPage) {
 		ProductMapper mapper = sqlsession.getMapper(ProductMapper.class);
@@ -55,7 +55,10 @@ public class ProductDAO {
 		return boardlist;
 	}
 	
-	// »óÇ° 1°³ ÀĞ±â
+	/**
+	 * æ²ç¤ºæ–‡ä¸€èª­
+	 * @param prod_id æ²ç¤ºæ–‡ã‚’èª­ã¿è¾¼ã‚€æ²ç¤ºæ–‡ id
+	 */
 	public Product getProd(int prod_id) {
 		ProductMapper mapper = sqlsession.getMapper(ProductMapper.class);
 		Product result = null;

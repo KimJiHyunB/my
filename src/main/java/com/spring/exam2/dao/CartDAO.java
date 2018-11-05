@@ -1,9 +1,7 @@
 package com.spring.exam2.dao;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -11,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.spring.exam2.controller.CartController;
 import com.spring.exam2.vo.Cart;
 
 
@@ -23,8 +20,11 @@ public class CartDAO {
 	@Autowired
 	SqlSession sqlsession;
 	
+	/**
+	 * è²·ç‰©ç± 
+	 */
 	public int insertCart(Cart cart) {
-		logger.info("DAO_insertCart ½ÃÀÛ");
+		logger.info("DAO_insertCart 1");
 		CartMapper mapper = sqlsession.getMapper(CartMapper.class);
 		
 		int result = 0;
@@ -34,13 +34,15 @@ public class CartDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		logger.info("DAO_insertCart Á¾·á");
+		logger.info("DAO_insertCart 2");
 		return result; 
 	}
 	
-	// Àå¹Ù±¸´Ï ¸ñ·Ï
+	/**
+	 * è²·ã„ç‰©ã‹ã”ã®ä¸€è¦§
+	 */
 	public List<HashMap<String, Object>> listCart(String user_id) {
-		logger.info("DAO_listCart ½ÃÀÛ");
+		logger.info("DAO_listCart 1");
 		CartMapper mapper = sqlsession.getMapper(CartMapper.class);
 		List<HashMap<String, Object>> result = null;
 
@@ -50,13 +52,15 @@ public class CartDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		logger.info("DAO_listCart ½ÃÀÛ");
+		logger.info("DAO_listCart 2");
 		return result; 
 	}
 	
-	// 6. Àå¹Ù±¸´Ï µ¿ÀÏÇÑ »óÇ° ·¹ÄÚµå È®ÀÎ
+	/**
+	 * è²·ã„ç‰©ã‹ã”ã®åŒä¸€ã®å•†å“ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’ç¢ºèª
+	 */ 
 	public int countCart(Cart cart) {
-		logger.info("DAO_countCart ½ÃÀÛ");
+		logger.info("DAO_countCart 1");
 		CartMapper mapper = sqlsession.getMapper(CartMapper.class);
 		int result = 0;
 		
@@ -66,13 +70,15 @@ public class CartDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		logger.info("DAO_countCart Á¾·á");
+		logger.info("DAO_countCart 2");
 		return result; 
 	}
 	
-	// 7. Àå¹Ù±¸´Ï¿¡ µ¿ÀÏÇÑ »óÇ°ÀÌ Á¸ÀçÇÏ¸é ¼öÁ¤ 
+	/**
+	 * è²·ã„ç‰©ã‹ã”ã«åŒä¸€ã®å•†å“ãŒå­˜åœ¨ã™ã‚Œã°,ä¿®æ­£
+	 */ 
 	public int updateCart(Cart cart) {
-		logger.info("DAO_updateCart ½ÃÀÛ");
+		logger.info("DAO_updateCart 1");
 		CartMapper mapper = sqlsession.getMapper(CartMapper.class);
 
 		int result = 0;
@@ -83,13 +89,15 @@ public class CartDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		logger.info("DAO_updateCart Á¾·á");
+		logger.info("DAO_updateCart 2");
 		return result; 
 	}
 	
-	// 3. Àå¹Ù±¸´Ï »èÁ¦
+	/**
+	 * è²·ã„ç‰©ã‹ã”ã®å‰Šé™¤
+	 */
     public int deleteCart(int cart_id) {
-    	logger.info("DAO_deleteCart ½ÃÀÛ");
+    	logger.info("DAO_deleteCart 1");
 		CartMapper mapper = sqlsession.getMapper(CartMapper.class);
 
 		int result = 0;
@@ -100,13 +108,15 @@ public class CartDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		logger.info("DAO_deleteCart Á¾·á");
+		logger.info("DAO_deleteCart 2");
 		return result; 
     }
     
-    // 5. Àå¹Ù±¸´Ï ±İ¾× ÇÕ°è
+    /**
+	 * è²·ã„ç‰©ã‹ã”ã®é‡‘é¡åˆè¨ˆ
+	 */
     public int sumMoney(String user_id) {
-    	logger.info("DAO_sumMoney ½ÃÀÛ");
+    	logger.info("DAO_sumMoney 1");
 		CartMapper mapper = sqlsession.getMapper(CartMapper.class);
 
 		int result = 0;
@@ -117,7 +127,7 @@ public class CartDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		logger.info("DAO_sumMoney Á¾·á");
+		logger.info("DAO_sumMoney 2");
 		return result; 
 		
     }

@@ -6,9 +6,15 @@ import java.util.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
-
+/**
+ * ファイル関連ユーチル
+ * ロードしたファイルの保存&サーバーに保存されたファイル削除などの機能を提供
+ */
 public class FileService {
 
+	/**
+	* アップロードされたファイルを指定した経路に保存し,保存されたファイル名をリターン
+	*/
 	public static String saveFile(MultipartFile mfile, String uploadPath) {
 
 		if (mfile == null || mfile.isEmpty() || mfile.getSize() == 0) {
@@ -56,6 +62,9 @@ public class FileService {
 		return savedFilename + ext;
 	}
 
+	/**
+	* サーバに保存されたファイルの全体経路を受信し,該当ファイルを削除
+	*/
 	public static boolean deleteFile(String fullpath) {
 
 		boolean result = false;

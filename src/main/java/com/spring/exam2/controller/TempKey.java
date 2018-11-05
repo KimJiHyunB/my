@@ -2,6 +2,9 @@ package com.spring.exam2.controller;
 
 import java.util.Random;
 
+/**
+ * 会員加入のための電子メール認証のためのランダムコード
+ */
 public class TempKey {
 	
 	private boolean lowerCheck;

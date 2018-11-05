@@ -9,29 +9,29 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 /**
- * 사용자 로그인 확인 인터셉터. HandlerInterceptorAdapter를 상속받아서 정의.
+ * ユーザーログイン確認インターセプタ HandlerInterceptorAdapterを相続して定義。
  */
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 	private static final Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
 
-	//콘트롤러의 메서드 실행 전에 처리
+	// コントローラのメソッド実行前に処理
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		
-		logger.debug("LoginInterceptor 실행");
+		logger.debug("LoginInterceptor 実行");
 		
-		//세션의 로그인 정보 읽기
+		// セッションのログイン情報読取
 		HttpSession session = request.getSession();
 		String loginId = (String) session.getAttribute("logId");
 		
-		//로그인되지 않은 경우 로그인 페이지로 이동
+		// ログインされない場合,ログインページに移動
 		if (loginId == null) {
-			//request.getContextPath()로 루트 경로를 구하여 절대 경로로 처리
+			//request.getContextPath()でルート経路を求め,絶対に経路で処理
 			response.sendRedirect(request.getContextPath() + "/user/loginForm");
 			return false;
 		}
-		//로그인 된 경우 요청한 경로로 진행
+		//　ログインされた場合に要請した経路で進行
 		return super.preHandle(request, response, handler);
 	}
 

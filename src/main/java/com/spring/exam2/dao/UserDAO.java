@@ -1,21 +1,11 @@
 package com.spring.exam2.dao;
 
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.mail.MessagingException;
-
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailSender;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Repository;
 
-import com.spring.exam2.controller.MailHandler;
-import com.spring.exam2.controller.TempKey;
 import com.spring.exam2.vo.User;
 
 @Repository
@@ -27,9 +17,11 @@ public class UserDAO {
 	SqlSession sqlsession;
 	
 	
-	// È¸¿ø °¡ÀÔ
+	/**
+	 * ä¼šå“¡åŠ å…¥
+	 */
 	public int insertUser(User user) {
-		logger.info("DAO_insertUser ½ÃÀÛ");
+		logger.info("DAO_insertUser 1");
 		UserMapper mapper = sqlsession.getMapper(UserMapper.class);
 		
 		int result = 0;
@@ -39,12 +31,12 @@ public class UserDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		logger.info("DAO_insertUser Á¾·á");
+		logger.info("DAO_insertUser 2");
 		return result;
 	}
 	
 	/**
-	 * ID·Î È¸¿øÁ¤º¸ °Ë»ö
+	 * IDã§ä¼šå“¡æƒ…å ±æ¤œç´¢
 	 */
 	public User getUser(String user_id) {
 		UserMapper mapper = sqlsession.getMapper(UserMapper.class);
@@ -53,10 +45,10 @@ public class UserDAO {
 	}
 	
 	/**
-	 * È¸¿ø Á¤º¸ ¼öÁ¤ Ã³¸®
+	 * ä¼šå“¡æƒ…å ±ä¿®æ­£å‡¦ç†
 	 */
 	public int updateUser(User user) {
-		logger.info("DAO_update ½ÃÀÛ");	
+		logger.info("DAO_update 1");	
 		UserMapper mapper = sqlsession.getMapper(UserMapper.class);
 		
 		int result = 0;
@@ -66,15 +58,16 @@ public class UserDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		logger.info("DAO_update Á¾·á");	
+		logger.info("DAO_update 2");	
 		return result;
 	}
 	
-	//ÇØ´ç email¿¡ ÀÎÁõ Å° ¾÷µ¥ÀÌÆ®
+	/**
+	 * è©²å½“ã®emailã«èªè¨¼ã‚­ãƒ¼ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
+	 */
     public int createAuthKey(User user) throws Exception {
-    	logger.info("DAO_createAuthKey ½ÃÀÛ");	
+    	logger.info("DAO_createAuthKey 1");	
 		UserMapper mapper = sqlsession.getMapper(UserMapper.class);
-
         
         int result = 0;
 		try {
@@ -83,14 +76,16 @@ public class UserDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		logger.info("DAO_createAuthKey Á¾·á");
+		logger.info("DAO_createAuthKey 2");
 		return result;
        
     }
     
-    // ¸ŞÀÏ ÀÎÁõ½Ã È°¼ºÈ­
+    /**
+	 * ãƒ¡ãƒ¼ãƒ«èªè¨¼æ™‚æ´»æ€§åŒ–
+	 */
  	public int userAuth(String user_id) {
- 		logger.info("DAO_userAuth ½ÃÀÛ");	
+ 		logger.info("DAO_userAuth 1");	
 		UserMapper mapper = sqlsession.getMapper(UserMapper.class);
         
         int result = 0;
@@ -100,7 +95,7 @@ public class UserDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		logger.info("DAO_userAuth Á¾·á");
+		logger.info("DAO_userAuth 2");
 		
 		return result;
  	}
